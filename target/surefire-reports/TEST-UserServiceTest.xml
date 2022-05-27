@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="6" failures="0" name="UserServiceTest" time="1.23" errors="0" skipped="0">
+<testsuite tests="6" failures="0" name="UserServiceTest" time="2.852" errors="0" skipped="0">
   <properties>
     <property name="idea.version" value="2022.1.1"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
@@ -27,10 +27,10 @@
     <property name="user.variant" value=""/>
     <property name="os.name" value="Windows 7"/>
     <property name="maven.ext.class.path" value="C:\Program Files\JetBrains\IntelliJ IDEA 2022.1\plugins\maven\lib\maven-event-listener.jar"/>
-    <property name="classworlds.conf" value="C:\Program Files\apache-maven-3.8.5\bin\m2.conf"/>
+    <property name="classworlds.conf" value="C:\Program Files\JetBrains\IntelliJ IDEA 2022.1\plugins\maven\lib\maven3\bin\m2.conf"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
     <property name="java.library.path" value="C:\Program Files\Java\jdk-18\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Git\cmd;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\apache-maven-3.8.5\bin;C:\Program Files\apache-maven-3.8.5\bin;C:\Windows\System32;."/>
-    <property name="maven.conf" value="C:\Program Files\apache-maven-3.8.5/conf"/>
+    <property name="maven.conf" value="C:\Program Files\JetBrains\IntelliJ IDEA 2022.1\plugins\maven\lib\maven3/conf"/>
     <property name="jdk.debug" value="release"/>
     <property name="java.class.version" value="62.0"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
@@ -41,7 +41,7 @@
     <property name="file.encoding" value="UTF-8"/>
     <property name="java.specification.version" value="18"/>
     <property name="user.name" value="sergh"/>
-    <property name="java.class.path" value="C:\Program Files\apache-maven-3.8.5\boot\plexus-classworlds-2.6.0.jar;C:\Program Files\apache-maven-3.8.5\boot\plexus-classworlds.license"/>
+    <property name="java.class.path" value="C:\Program Files\JetBrains\IntelliJ IDEA 2022.1\plugins\maven\lib\maven3\boot\plexus-classworlds-2.6.0.jar;C:\Program Files\JetBrains\IntelliJ IDEA 2022.1\plugins\maven\lib\maven3\boot\plexus-classworlds.license"/>
     <property name="java.vm.specification.version" value="18"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="sun.java.command" value="org.codehaus.classworlds.Launcher -Didea.version=2022.1.1 test"/>
@@ -52,7 +52,7 @@
     <property name="java.version" value="18"/>
     <property name="native.encoding" value="Cp1252"/>
     <property name="java.vendor" value="Oracle Corporation"/>
-    <property name="maven.home" value="C:\Program Files\apache-maven-3.8.5"/>
+    <property name="maven.home" value="C:\Program Files\JetBrains\IntelliJ IDEA 2022.1\plugins\maven\lib\maven3"/>
     <property name="file.separator" value="\"/>
     <property name="java.version.date" value="2022-03-22"/>
     <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
@@ -60,10 +60,10 @@
     <property name="sun.cpu.endian" value="little"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="UserServiceTest" name="saveUser" time="0.69"/>
-  <testcase classname="UserServiceTest" name="removeUserById" time="0.13"/>
-  <testcase classname="UserServiceTest" name="getAllUsers" time="0.14"/>
-  <testcase classname="UserServiceTest" name="dropUsersTable" time="0.06"/>
-  <testcase classname="UserServiceTest" name="createUsersTable" time="0.06"/>
-  <testcase classname="UserServiceTest" name="cleanUsersTable" time="0.15"/>
+  <testcase classname="UserServiceTest" name="saveUser" time="2.622"/>
+  <testcase classname="UserServiceTest" name="removeUserById" time="0.07"/>
+  <testcase classname="UserServiceTest" name="getAllUsers" time="0.04"/>
+  <testcase classname="UserServiceTest" name="dropUsersTable" time="0.03"/>
+  <testcase classname="UserServiceTest" name="createUsersTable" time="0.02"/>
+  <testcase classname="UserServiceTest" name="cleanUsersTable" time="0.07"/>
 </testsuite>
