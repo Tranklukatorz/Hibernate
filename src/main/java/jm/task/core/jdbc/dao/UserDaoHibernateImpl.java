@@ -10,7 +10,8 @@ import org.hibernate.query.Query;
 import java.util.List;
 
 public class UserDaoHibernateImpl implements UserDao {
-    SessionFactory sessionFactory = Util.getSessionFactory();
+
+    private final SessionFactory sessionFactory = Util.getSingletonUtil().getSessionFactory();
 
     public UserDaoHibernateImpl() {
     }
@@ -18,6 +19,7 @@ public class UserDaoHibernateImpl implements UserDao {
     @Override
     public void createUsersTable() {
         Transaction transaction = null;
+
         try (Session session = sessionFactory.openSession()) {
 
             transaction = session.beginTransaction();
@@ -27,7 +29,6 @@ public class UserDaoHibernateImpl implements UserDao {
                     "lastName varchar(25) not null," +
                     "age TINYINT not null )").executeUpdate();
             transaction.commit();
-
         } catch (HibernateException e) {
             if (transaction != null) {
                 transaction.rollback();
@@ -41,14 +42,13 @@ public class UserDaoHibernateImpl implements UserDao {
     @Override
     public void dropUsersTable() {
         Transaction transaction = null;
-        try {
-            Session session = sessionFactory.openSession();
+
+        try (Session session = sessionFactory.openSession()) {
 
             transaction = session.beginTransaction();
             session.createSQLQuery("drop table if exists test.user").executeUpdate();
             transaction.commit();
-            session.close();
-            
+
         } catch (HibernateException er) {
             if (transaction != null) {
                 transaction.rollback();
@@ -61,8 +61,8 @@ public class UserDaoHibernateImpl implements UserDao {
     @Override
     public void saveUser(String name, String lastName, byte age) {
         Transaction transaction = null;
-        try {
-            Session session = sessionFactory.openSession();
+
+        try (Session session = sessionFactory.openSession()) {
 
             Transaction transact = session.beginTransaction();
             Query query= session.createSQLQuery("INSERT INTO `test`.`user` (`name`, `lastName`, `age`) VALUES (:myname, :mylastname, :myage)");
@@ -72,7 +72,6 @@ public class UserDaoHibernateImpl implements UserDao {
             query.executeUpdate();
             transact.commit();
 
-            session.close();
             } catch (HibernateException e) {
                 if (transaction != null) {
                     transaction.rollback();
@@ -84,14 +83,13 @@ public class UserDaoHibernateImpl implements UserDao {
     @Override
     public void removeUserById(long id) {
         Transaction transaction = null;
-        try {
-            Session session = sessionFactory.openSession();
+
+        try (Session session = sessionFactory.openSession()) {
 
             transaction = session.beginTransaction();
             session.createSQLQuery("DELETE FROM `test`.`user` WHERE (`id` = :myid)").setParameter("myid", id).executeUpdate();
             transaction.commit();
 
-            session.close();
         } catch (HibernateException e) {
             if (transaction != null) {
                 transaction.rollback();
@@ -105,14 +103,13 @@ public class UserDaoHibernateImpl implements UserDao {
         List<User> usrList;
         String sql = "From " + User.class.getSimpleName();
         Transaction transaction = null;
-        try {
-            Session session = sessionFactory.openSession();
+
+        try (Session session = sessionFactory.openSession()) {
 
             transaction = session.beginTransaction();
             usrList = session.createQuery(sql).list();
             transaction.commit();
 
-            session.close();
         } catch (HibernateException e) {
             if (transaction != null) {
                 transaction.rollback();
@@ -125,14 +122,13 @@ public class UserDaoHibernateImpl implements UserDao {
     @Override
     public void cleanUsersTable() {
         Transaction transaction = null;
-        try {
-            Session session = sessionFactory.openSession();
+
+        try (Session session = sessionFactory.openSession()) {
 
             transaction = session.beginTransaction();
             session.createSQLQuery("TRUNCATE TABLE test.user").executeUpdate();
             transaction.commit();
 
-            session.close();
         } catch (HibernateException e) {
             if (transaction != null) {
                 transaction.rollback();

@@ -9,13 +9,21 @@ import java.util.Properties;
 
 public class Util {
     // Hibernate
-
+    private static  Util singletonUtil;
     private static SessionFactory sessionFactory;
 
     private Util(){
     }
 
-    public static SessionFactory getSessionFactory(){
+    public static Util getSingletonUtil(){
+        if (singletonUtil != null){
+            singletonUtil = new Util();
+        }
+        return singletonUtil;
+    }
+
+    public SessionFactory getSessionFactory(){
+
         if (sessionFactory == null) {
             Properties prop = new Properties();
             prop.setProperty("hibernate.connection.driver_class", "com.mysql.jdbc.Driver");
