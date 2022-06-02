@@ -16,7 +16,7 @@ public class Util {
     }
 
     public static Util getSingletonUtil(){
-        if (singletonUtil != null){
+        if (singletonUtil == null){
             singletonUtil = new Util();
         }
         return singletonUtil;
